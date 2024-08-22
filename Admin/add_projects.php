@@ -27,16 +27,16 @@ include_once('navbar.php');
                                     <form role="form" method="post" enctype="multipart/form-data"  onsubmit="return project(this)">
                                         <div class="form-group">
                                             <label>Project Name</label>
-                                            <input class="form-control" placeholder="Please Enter Project Name" name="title" id="title"/>
+                                            <input class="form-control" placeholder="Please Enter Project Name" name="title" id="title" required/>
                                         </div>
 										<div class="form-group">
                                             <label>Project Image</label>
-                                            <input type="file" class="form-control" name="img" id="img"/>
+                                            <input type="file" class="form-control" name="img" id="img" required/>
                                         </div>
                                        
                                         <div class="form-group">
                                             <label>Project Status</label>
-                                            <div class="radio">
+                                            <div class="radio" required>
                                                 <label>
                                                     <input type="radio" name="status" id="optionsRadios1" value="Complete" checked />Complete
                                                 </label>

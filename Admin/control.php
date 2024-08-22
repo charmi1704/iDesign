@@ -125,7 +125,7 @@ class control extends model    // 2 step extends(inherit) model class
 							alert('project Success !');
 						</script>";
 					}
-				}	
+				}				
 			include_once('add_projects.php');
 			break;
 			
@@ -655,7 +655,44 @@ class control extends model    // 2 step extends(inherit) model class
 								
 							}
 							break;
+
+//=======================================================================================================================================
+			//API
+
+			case '/blog_get':	
+				$res=$this->select('blog');
+				$count=count($res); // data count
+				if($count > 0)
+				{	
+					echo json_encode($res);
+				}
+				else
+				{	
+					echo json_encode(array("message" => "No Blog Found.", "status" => false));
+				}
+			break;
+
+			case '/blog_post':	
 			
+				$data_arr = json_decode(file_get_contents("php://input"), true);
+				$name = $data_arr["name"]; 
+				$img = $data_arr["img"];
+				$description = $data_arr["description"];
+				
+				$arr=array("name"=>$name,"img"=>$img,"description"=>$description);
+				
+				$res=$this->insert('blog',$arr);
+				if($res or die("Insert Query Failed"))
+				{
+					echo json_encode(array("message" => "Blog Inserted Successfully", "status" => true));	
+				}
+				else
+				{
+					echo json_encode(array("message" => "Failed Blog Not Inserted ", "status" => false));	
+				}
+			break;
+
+
 			default:
 			echo "<h1 style='color:red;text-align:center'> Page Not Found </h1>";
 			break;

@@ -1,6 +1,10 @@
 ﻿<?php
 include_once('navbar.php');
 ?>
+
+ <!--include javascript file -->
+ <script src="validation.js" type="text/javascript" ></script>
+
         <div id="page-wrapper" >
             <div id="page-inner">
                 <div class="row">
@@ -20,18 +24,18 @@ include_once('navbar.php');
                             <div class="row">
                                 <div class="col-md-12">
                                     
-                                    <form role="form" method="POST" enctype="multipart/form-data">
+                                    <form role="form" method="POST" enctype="multipart/form-data" onsubmit="return service(this)">
                                         <div class="form-group">
                                             <label>Service Name</label>
-                                            <input class="form-control" placeholder="Please Enter Service Name" name="name"/>
+                                            <input class="form-control" placeholder="Please Enter Service Name" name="name" required/>
                                         </div>
 										<div class="form-group">
                                             <label>Service Image</label>
-                                            <input type="file" class="form-control"  name="img"/>
+                                            <input type="file" class="form-control"  name="img" required/>
                                         </div>
                                         <div class="form-group">
                                             <label>Description</label>
-                                            <input class="form-control" placeholder="Please Enter Description"  name="description"/>
+                                            <input class="form-control" placeholder="Please Enter Description"  name="description" required/>
                                         </div>
                                         
                                         

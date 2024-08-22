@@ -23,15 +23,15 @@ include_once('navbar.php');
                                     <form role="form" method="post" enctype="multipart/form-data">
                                         <div class="form-group">
                                             <label>Name</label>
-                                            <input class="form-control" placeholder="Please Enter  Name" name="name" />
+                                            <input class="form-control" placeholder="Please Enter  Name" name="name" required/>
                                         </div>
 										<div class="form-group">
                                             <label>Image</label>
-                                            <input type="file" class="form-control" name="img"/>
+                                            <input type="file" class="form-control" name="img" required/>
                                         </div>
                                         <div class="form-group">
                                             <label>Designation</label>
-                                            <input class="form-control" placeholder="Please Enter designation" name="designation"/>
+                                            <input class="form-control" placeholder="Please Enter designation" name="designation" required/>
                                         </div>
                                         
                                         <button type="submit" class="btn btn-default" name="submit">Submit</button>
